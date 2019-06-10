@@ -15,34 +15,32 @@ project 1 - A Random Quote Generator
   Use console.log() to log your array of quotes to the console.
 ***/
 
-const qoutes = [
+const quotes = [
   {
   qoute: "Have no fear of perfection—you'll never reach it.",
   source: "Salvador Dali",
   citation: "invisionapp",
   year: "1976"
-  }
+},
   {
   qoute: "Good design is like a refrigerator—when it works, no one notices, but when it doesn’t, it sure stinks.",
   source: "Damian Jolley",
-  }
+},
   {
   qoute: "Digital design is like painting, except the paint never dries.",
   source: "Neville Brody",
-  }
+},
 
   {
   qoute: "The role of the designer is that of a good, thoughtful host anticipating the needs of his guests.",
   source: "Charles Eames",
-  }
-
+},
   {
   qoute: "Make it simple, but significant.",
   source: "Don Draper",
   }
 ];
 
-console.log(qoutes);
 
 
 /***
@@ -51,9 +49,12 @@ console.log(qoutes);
    - Cse the random number to `return` a random quote object from the `quotes` array.
 ***/
 
+const getRandomQuote = () => {
+  const randomNumber = Math.floor( Math.random() * quotes.length ) + 1;
+  return quotes(randomNumber);
+};
 
-
-
+console.log(getRandomQuote());
 /***
   Create the `printQuote` function to:
    - Call the `getRandomQuote` function and assign it to a variable.
@@ -67,8 +68,28 @@ console.log(qoutes);
    - Set the `innerHTML` of the `quote-box` div to the HTML string.
 ***/
 
+// HTML += '<p class="quote">' + qoutes.qoute + '.</p>';
+// HTML += '<p class="source">' + qoutes.source + '<span class="citation">' + qoutes.citation + '</span>'
+// + '<span class="year">'+ qoutes.year + '</span>' + '.</p>';
+// const randomNumber  =  getRandomQuote();
+// let HTML = '';
+// HTML += '<p class="quote">' + getRandomQuote.qoute + '.</p>';
+// HTML += '<p class="source">' + getRandomQuote.source;
+// console.log(HTML);
 
-
+// const printQuote = () => {
+//   const randomNumber  =  getRandomQuote();
+//   let HTML = '';
+//   HTML += '<p class="quote">' + getRandomQuote.qoute + '.</p>';
+//   HTML += '<p class="source">' + getRandomQuote.source;
+//   if(qoutes.citation === " " ){
+//     HTML += '<span class="citation">' + qoutes.citation + '</span>';
+//   }
+//   if(qoutes.citation === " " ){
+//   HTML += '<span class="year">'+ qoutes.year + '</span>' + '.</p>';
+//   }
+//   console.log(HTML);
+// };
 
 /***
   When the "Show another quote" button is clicked, the event listener
@@ -77,7 +98,7 @@ console.log(qoutes);
   comment.
 ***/
 
-document.getElementById('loadQuote').addEventListener("click", printQuote, false);
+// document.getElementById('loadQuote').addEventListener("click", printQuote, false);
 
 
 // Remember to delete the comments that came with this file, and replace them with your own code comments.
