@@ -1,13 +1,15 @@
-/** 
+/**
  * Treehouse FSJS Techdegree
  * Random Quote Generator - CSS
  */
 
 body {
-  background-color: #36b55c;
   color: white;
   font-family: 'Playfair Display', serif;
+  /* background: linear-gradient(90deg, #1370fb 20px, transparent 1%) center, linear-gradient(#1370fb 20px, transparent 1%) center, #3882e8; */
+  background-size: 22px 22px;
 }
+
 
 #quote-box {
   position: absolute;
@@ -92,6 +94,7 @@ body {
 #loadQuote:focus {
   outline: none;
 }
+
 
 @media (min-width: 420px) {
   .quote {

@@ -17,31 +17,31 @@ project 1 - A Random Quote Generator
 
 const quotes = [
   {
-  qoute: "Have no fear of perfection—you'll never reach it.",
+  quote: "Have no fear of perfection—you'll never reach it.",
   source: "Salvador Dali",
   citation: "invisionapp",
-  year: "1976"
 },
   {
-  qoute: "Good design is like a refrigerator—when it works, no one notices, but when it doesn’t, it sure stinks.",
+  quote: "Good design is like a refrigerator—when it works, no one notices, but when it doesn’t, it sure stinks.",
   source: "Damian Jolley",
 },
   {
-  qoute: "Digital design is like painting, except the paint never dries.",
+  quote: "Digital design is like painting, except the paint never dries.",
   source: "Neville Brody",
+  year: "1976"
 },
 
   {
-  qoute: "The role of the designer is that of a good, thoughtful host anticipating the needs of his guests.",
+  quote: "The role of the designer is that of a good, thoughtful host anticipating the needs of his guests.",
   source: "Charles Eames",
 },
   {
-  qoute: "Make it simple, but significant.",
+  quote: "Make it simple, but significant.",
   source: "Don Draper",
   }
 ];
 
-
+console.log(quotes);
 
 /***
   Create the `getRandomQuote` function to:
@@ -50,11 +50,12 @@ const quotes = [
 ***/
 
 const getRandomQuote = () => {
-  const randomNumber = Math.floor( Math.random() * quotes.length ) + 1;
-  return quotes(randomNumber);
-};
+  const randomNumber = Math.floor( Math.random() * quotes.length );
+  return quotes[randomNumber];
+}
 
 console.log(getRandomQuote());
+
 /***
   Create the `printQuote` function to:
    - Call the `getRandomQuote` function and assign it to a variable.
@@ -68,28 +69,37 @@ console.log(getRandomQuote());
    - Set the `innerHTML` of the `quote-box` div to the HTML string.
 ***/
 
-// HTML += '<p class="quote">' + qoutes.qoute + '.</p>';
-// HTML += '<p class="source">' + qoutes.source + '<span class="citation">' + qoutes.citation + '</span>'
-// + '<span class="year">'+ qoutes.year + '</span>' + '.</p>';
-// const randomNumber  =  getRandomQuote();
-// let HTML = '';
-// HTML += '<p class="quote">' + getRandomQuote.qoute + '.</p>';
-// HTML += '<p class="source">' + getRandomQuote.source;
-// console.log(HTML);
+const printQuote = () => {
 
-// const printQuote = () => {
-//   const randomNumber  =  getRandomQuote();
-//   let HTML = '';
-//   HTML += '<p class="quote">' + getRandomQuote.qoute + '.</p>';
-//   HTML += '<p class="source">' + getRandomQuote.source;
-//   if(qoutes.citation === " " ){
-//     HTML += '<span class="citation">' + qoutes.citation + '</span>';
-//   }
-//   if(qoutes.citation === " " ){
-//   HTML += '<span class="year">'+ qoutes.year + '</span>' + '.</p>';
-//   }
-//   console.log(HTML);
-// };
+  let randomQuote = getRandomQuote();
+
+  let HTML = ' ';
+  HTML += '<p class="quote">' + randomQuote.quote + '.</p>';
+  HTML += '<p class="source">' + randomQuote.source;
+
+  if ( randomQuote.hasOwnProperty('citation') === true ) {
+    HTML += '<span class="citation">' + randomQuote.citation + '</span>';
+  }
+
+  if ( randomQuote.hasOwnProperty('year') === true ) {
+    HTML += '<span class="year">'+ randomQuote.year + '</span>';
+  }
+
+  HTML +='.</p>';
+
+  document.getElementById('quote-box').innerHTML = HTML;
+}
+printQuote();
+
+ const random_bg_color = () => {
+  var x = Math.floor(Math.random() * 256);
+  var y = Math.floor(Math.random() * 256);
+  var z = Math.floor(Math.random() * 256);
+  var bgColor = "rgb(" + x + "," + y + "," + z + ")";
+  console.log(bgColor);
+  document.body.style.backgroundColor = bgColor;
+}
+console.log(random_bg_color());
 
 /***
   When the "Show another quote" button is clicked, the event listener
@@ -98,7 +108,7 @@ console.log(getRandomQuote());
   comment.
 ***/
 
-// document.getElementById('loadQuote').addEventListener("click", printQuote, false);
+document.getElementById('loadQuote').addEventListener("click", printQuote, false);
 
 
 // Remember to delete the comments that came with this file, and replace them with your own code comments.
