@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="142" height="142" viewBox="0 0 142 142">
+  <defs>
+    <clipPath id="clip-iPhone_X_XS_1">
+      <rect width="142" height="142"/>
+    </clipPath>
+  </defs>
+  <g id="iPhone_X_XS_1" data-name="iPhone X/XS – 1" clip-path="url(#clip-iPhone_X_XS_1)">
+    <rect width="142" height="142" fill="#fff"/>
+    <circle id="Ellipse_1" data-name="Ellipse 1" cx="8" cy="8" r="8" transform="translate(28 28)" fill="rgba(0,0,0,0.19)"/>
+    <circle id="Ellipse_6" data-name="Ellipse 6" cx="8" cy="8" r="8" transform="translate(28 99)" fill="rgba(0,0,0,0.19)"/>
+    <circle id="Ellipse_7" data-name="Ellipse 7" cx="8" cy="8" r="8" transform="translate(99 99)" fill="rgba(0,0,0,0.19)"/>
+    <circle id="Ellipse_8" data-name="Ellipse 8" cx="8" cy="8" r="8" transform="translate(99 28)" fill="rgba(0,0,0,0.19)"/>
+  </g>
+</svg>
