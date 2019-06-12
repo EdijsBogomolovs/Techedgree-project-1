@@ -73,6 +73,7 @@ const printQuote = () => {
 
   document.getElementById('quote-box').innerHTML = HTML;
 }
+
 /***
 call printQuote function
 ***/
@@ -92,14 +93,21 @@ randomBgColor function
   container.style.backgroundColor = bgColor;
 }
 
+const interval = () => {
+  window.setInterval(printQuote, 2000);
+  window.setInterval(randomBgColor, 2000);
+};
+interval();
+
+
 /***
 call randomBgColor function
 ***/
 randomBgColor();
-
+/***
+call fubntions ptintQuote and randomBgColor by cliclikin button
+***/
 document.getElementById('loadQuote').addEventListener("click", () => {
   printQuote();
   randomBgColor();
 });
-//
-// document.getElementById('loadQuote').addEventListener("click", printQuote, randomBgColor, false);
