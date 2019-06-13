@@ -10,27 +10,33 @@ project 1 - A Random Quote Generator
 
 const quotes = [
   {
-  quote: `Have no fear of perfection—you'll never reach it.`,
-  source: "Salvador Dali",
-  citation: "invisionapp",
+  quote: `“It’s not enough that we build products that function, that are understandable and usable, we also need to build products that bring joy and excitement, pleasure and fun, and yes, beauty to people’s lives.”`,
+  source: "Don Norman",
+  role: "Designer"
 },
   {
   quote: "Good design is like a refrigerator—when it works, no one notices, but when it doesn’t, it sure stinks.",
   source: "Damian Jolley",
+  role: "Designer"
 },
   {
-  quote: "Digital design is like painting, except the paint never dries.",
-  source: "Neville Brody",
-  year: "1976"
+  quote: `Without requirements or design, programming is the art of adding bugs to an empty text file`,
+  source: "Louis Srygley",
+  year: "2002",
+  role: "Programmer"
 },
 
   {
-  quote: "The role of the designer is that of a good, thoughtful host anticipating the needs of his guests.",
-  source: "Charles Eames",
+  quote: "Experience is the name everyone gives to their mistakes.",
+  source: "Oscar Wilde",
+  citation: "invisionapp",
+  role: "Programmer"
 },
   {
   quote: "Make it simple, but significant.",
   source: "Don Draper",
+  year: "2010",
+  role: "Designer"
   }
 ];
 
@@ -53,23 +59,22 @@ getRandomQuote();
 /***
 printQuote function
 ***/
-
 const printQuote = () => {
 
   let randomQuote = getRandomQuote();
   let HTML = ` `;
-  HTML += `<p class="quote">` + randomQuote.quote + `.</p>`;
-  HTML += `<p class="source">` + randomQuote.source;
+  HTML += `<p class="quote"> ${randomQuote.quote} .</p>
+          <p class="source"> ${randomQuote.source}`;
 
   if ( randomQuote.hasOwnProperty('citation')) {
-    HTML += `<span class="citation">` + randomQuote.citation + `</span>`;
+    HTML += `<span class="citation"> ${randomQuote.citation}</span>`;
   }
 
   if ( randomQuote.hasOwnProperty('year')) {
-    HTML += `<span class="year">`+ randomQuote.year + `</span>`;
+    HTML += `<span class="year"> ${randomQuote.year} </span>`;
   }
 
-  HTML +=`.</p>`;
+  HTML +=`<span class="year"> ${randomQuote.role}</span></p> `;
 
   document.getElementById('quote-box').innerHTML = HTML;
 }
@@ -88,14 +93,14 @@ randomBgColor function
   const x = Math.floor(Math.random() * 256);
   const y = Math.floor(Math.random() * 256);
   const z = Math.floor(Math.random() * 256);
-  const bgColor = `rgb(` + x + `,` + y + `,` + z + `)`;
+  const bgColor = `rgb( ${x}, ${y}, ${z} )`;
   const container = document.querySelector('.container');
   container.style.backgroundColor = bgColor;
 }
 
 const interval = () => {
-  window.setInterval(printQuote, 2000);
-  window.setInterval(randomBgColor, 2000);
+  window.setInterval(printQuote, 4000);
+  window.setInterval(randomBgColor, 4000);
 };
 interval();
 
@@ -105,7 +110,7 @@ call randomBgColor function
 ***/
 randomBgColor();
 /***
-call fubntions ptintQuote and randomBgColor by cliclikin button
+call function printQuote and randomBgColor by clicking button
 ***/
 document.getElementById('loadQuote').addEventListener("click", () => {
   printQuote();
