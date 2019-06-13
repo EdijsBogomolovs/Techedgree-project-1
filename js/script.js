@@ -50,11 +50,7 @@ const getRandomQuote = () => {
   const randomNumber = Math.floor( Math.random() * quotes.length );
   return quotes[randomNumber];
 }
-/***
-  call getRandomQuote function
-***/
 
-getRandomQuote();
 
 /***
 printQuote function
@@ -85,14 +81,17 @@ call printQuote function
 
 printQuote();
 
+
+randomNumberGenerator = () => Math.floor(Math.random() * 256);
+
 /***
 randomBgColor function
 ***/
 
  const randomBgColor = () => {
-  const x = Math.floor(Math.random() * 256);
-  const y = Math.floor(Math.random() * 256);
-  const z = Math.floor(Math.random() * 256);
+  const x = randomNumberGenerator();
+  const y = randomNumberGenerator();
+  const z = randomNumberGenerator();
   const bgColor = `rgb( ${x}, ${y}, ${z} )`;
   const container = document.querySelector('.container');
   container.style.backgroundColor = bgColor;
@@ -101,7 +100,7 @@ randomBgColor function
 const interval = () => {
   window.setInterval(printQuote, 4000);
   window.setInterval(randomBgColor, 4000);
-};
+}
 interval();
 
 
@@ -110,6 +109,7 @@ call randomBgColor function
 ***/
 randomBgColor();
 /***
+
 call function printQuote and randomBgColor by clicking button
 ***/
 document.getElementById('loadQuote').addEventListener("click", () => {
