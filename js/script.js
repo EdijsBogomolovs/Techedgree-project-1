@@ -109,10 +109,15 @@ call randomBgColor function
 ***/
 randomBgColor();
 /***
-
 call function printQuote and randomBgColor by clicking button
 ***/
+
+const stopInterval = () => {
+  clearInterval(interval);
+}
 document.getElementById('loadQuote').addEventListener("click", () => {
   printQuote();
   randomBgColor();
+  stopInterval();
+  interval();
 });
